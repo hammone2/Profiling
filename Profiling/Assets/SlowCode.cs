@@ -9,16 +9,8 @@ public class SlowCode : MonoBehaviour
     void Update()
     {
         GetComponent<Renderer>().material.color = ColorForTime();
-        DoLoopStuff();
-        DoSomethingElse();
     }
-    private void DoLoopStuff()
-    {
-        for (int i = 0; i < 2500; i++)
-        {
-            GetComponent<Renderer>().material.color = ColorForTime();
-        }
-    }
+
     private Color ColorForTime()
     {
         timeValueRed += Time.deltaTime;
@@ -31,9 +23,5 @@ public class SlowCode : MonoBehaviour
         if (timeValueBlue > 1f)
             timeValueBlue -= 1f;
         return new Color(timeValueRed, timeValueGreen, timeValueBlue);
-    }
-    private void DoSomethingElse()
-    {
-        Debug.Log("look how slow logging is!");
     }
 }
